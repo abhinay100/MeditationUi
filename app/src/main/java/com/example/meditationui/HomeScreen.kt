@@ -72,41 +72,43 @@ fun HomeScreen() {
             .fillMaxSize()
 
     ) {
-        GreetingSection()
-        ChipSection(chips = listOf("Sweet sleep", "Insomnia", "Depression"))
-        CurrentMeditation()
-        FeatureSection(
-            features = listOf(
-                Feature(
-                    title = "Sleep meditation",
-                    R.drawable.ic_headphone,
-                    BlueViolet1,
-                    BlueViolet2,
-                    BlueViolet3
-                ),
-                Feature(
-                    title = "Tips for sleeping",
-                    R.drawable.ic_videocam,
-                    LightGreen1,
-                    LightGreen2,
-                    LightGreen3
-                ),
-                Feature(
-                    title = "Night island",
-                    R.drawable.ic_headphone,
-                    OrangeYellow1,
-                    OrangeYellow2,
-                    OrangeYellow3
-                ),
-                Feature(
-                    title = "Calming sounds",
-                    R.drawable.ic_headphone,
-                    Beige1,
-                    Beige2,
-                    Beige3
+        Column {
+            GreetingSection()
+            ChipSection(chips = listOf("Sweet sleep", "Insomnia", "Depression"))
+            CurrentMeditation()
+            FeatureSection(
+                features = listOf(
+                    Feature(
+                        title = "Sleep meditation",
+                        R.drawable.ic_headphone,
+                        BlueViolet1,
+                        BlueViolet2,
+                        BlueViolet3
+                    ),
+                    Feature(
+                        title = "Tips for sleeping",
+                        R.drawable.ic_videocam,
+                        LightGreen1,
+                        LightGreen2,
+                        LightGreen3
+                    ),
+                    Feature(
+                        title = "Night island",
+                        R.drawable.ic_headphone,
+                        OrangeYellow1,
+                        OrangeYellow2,
+                        OrangeYellow3
+                    ),
+                    Feature(
+                        title = "Calming sounds",
+                        R.drawable.ic_headphone,
+                        Beige1,
+                        Beige2,
+                        Beige3
+                    )
                 )
             )
-        )
+        }
         BottomMenu(items = listOf(
             BottomMenuContent("Home", R.drawable.ic_home),
             BottomMenuContent("Meditate", R.drawable.ic_bubble),
@@ -151,7 +153,7 @@ fun BottomMenu(
                 selectedItemIndex = index
 
             }
-            
+
         }
     }
 
@@ -210,7 +212,7 @@ fun GreetingSection(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(15.dp)
+            .padding(start = 15.dp, top = 100.dp, end = 15.dp)
     ) {
 
         Column(
@@ -331,7 +333,8 @@ fun FeatureSection(features: List<Feature>) {
         Text(
             text = "Featured",
             style = MaterialTheme.typography.headlineMedium,
-            modifier = Modifier.padding(15.dp)
+            modifier = Modifier.padding(15.dp),
+            color = Color.White
         )
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
